@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+    rrd:
+        image: grafana-rrd
+        build:
+            context: ./grafana-rrd-server
+        restart: unless-stopped
+        # activate this port for debugging only
+        # ports:
+        #    - 9000:9000
+        environment:
+            - RRD_STEP=600
+        volumes:
+            - ./rrd-data:/rrd-data
+        networks:
+            grafana-net:
+                aliases:
+                    - rrd-server
+
+    grafana:
+        image: grafana/grafana
+        restart: unless-stopped
+        ports:
+            - 127.0.0.1:3000:3000
+        environment:
+            - GF_SERVER_ROOT_URL=http://grfn.localhost
+            - GF_SECURITY_ADMIN_PASSWORD=changeme
+            - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
+        volumes:
+            - grafana:/var/lib/grafana
+        networks:
+            grafana-net:
+                aliases:
+                    - grafana
+
+volumes:
+    grafana:
+
+networks:
+    grafana-net:
+        name: grafana-net
