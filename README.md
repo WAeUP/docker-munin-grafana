@@ -82,4 +82,9 @@ hovering over to "Create" and "Import". In the presented form enter number
 ``9627``, click on "Load", select your freshly created data source in the last
 row of the form and finally click on "Import".
 
+The raw Munin dashboard will most probably look empty after import. That is,
+because the data sources of all the panels will most likely have a different
+name than the given ones from the imported template.
 
+Therefore, we have to go through all the elements and have to fix these
+sources.
