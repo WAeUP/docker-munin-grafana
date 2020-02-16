@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-    rrd:
+    rrd-server:
         image: grafana-rrd
         build:
             context: ./grafana-rrd-server
@@ -14,8 +14,6 @@ services:
             - ./rrd-data:/rrd-data
         networks:
             grafana-net:
-                aliases:
-                    - rrd-server
 
     grafana:
         image: grafana/grafana

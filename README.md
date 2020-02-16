@@ -34,7 +34,7 @@ where munin is installed in standard paths, this path would be `/var/lib/munin`
 which could be connected like this:
 
     ...
-    rrd:
+    rrd-server:
     ...
         volumes:
         - /var/lib/munin:/rrd-data
@@ -66,7 +66,7 @@ In the settings screen apearing next, set something sensible as `name` and fill
 in the URL of the freshly started grafana-rrd-server. If you have not fiddled
 around too much with the `docker-compose.yml`, the URL will be
 
-    http://rrd:9000
+    http://rrd-server:9000
 
 as this is the hostname provided by docker-compose for the rrd-server.
 
