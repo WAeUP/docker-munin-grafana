@@ -5,7 +5,7 @@ services:
         build:
             context: ./grafana-rrd-server
         restart: unless-stopped
-        # activate this port for debugging only
+        ## activate this port for debugging only
         # ports:
         #    - 9000:9000
         environment:
@@ -26,10 +26,9 @@ services:
             - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
         volumes:
             - grafana:/var/lib/grafana
-        networks:
-            grafana-net:
-                aliases:
-                    - grafana
+        ## enable this, if you do not use email or other outbound connections
+        # networks:
+        #     grafana-net:
 
 volumes:
     grafana:
