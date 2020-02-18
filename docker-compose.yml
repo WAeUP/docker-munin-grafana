@@ -24,6 +24,14 @@ services:
             - GF_SERVER_ROOT_URL=http://grfn.localhost
             - GF_SECURITY_ADMIN_PASSWORD=changeme
             - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
+            ## smtp-related settings
+            - GF_SMTP_ENABLED=true
+            # must give host _and_ port
+            - GF_SMTP_HOST=mail.sample.org:587
+            - GF_SMTP_FROM_ADDRESS=grafana@sample.org
+            # mail credentials for the mail server
+            - GF_SMTP_USER=bob
+            - GF_SMTP_PASSWORD=changeme
         volumes:
             - grafana:/var/lib/grafana
         ## enable this, if you do not use email or other outbound connections
