@@ -32,6 +32,8 @@ services:
             # mail credentials for the mail server
             - GF_SMTP_USER=bob
             - GF_SMTP_PASSWORD=changeme
+            # analytics
+            - GF_ANALYTICS_REPORTING_ENABLED=false
         volumes:
             - grafana:/var/lib/grafana
         ## enable this, if you do not use email or other outbound connections
