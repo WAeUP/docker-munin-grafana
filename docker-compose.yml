@@ -12,8 +12,6 @@ services:
             - RRD_STEP=600
         volumes:
             - ./rrd-data:/rrd-data
-        networks:
-            grafana-net:
 
     grafana:
         image: grafana/grafana
@@ -36,13 +34,6 @@ services:
             - GF_ANALYTICS_REPORTING_ENABLED=false
         volumes:
             - grafana:/var/lib/grafana
-        ## enable this, if you do not use email or other outbound connections
-        # networks:
-        #     grafana-net:
 
 volumes:
     grafana:
-
-networks:
-    grafana-net:
-        name: grafana-net
