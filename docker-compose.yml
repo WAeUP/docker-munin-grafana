@@ -31,6 +31,7 @@ services:
             - GF_SMTP_USER=bob
             - GF_SMTP_PASSWORD=changeme
             # analytics
+            - GF_ANALYTICS_CHECK_FOR_UPDATES=true
             - GF_ANALYTICS_REPORTING_ENABLED=false
         volumes:
             - grafana:/var/lib/grafana
