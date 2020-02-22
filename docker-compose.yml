@@ -33,6 +33,9 @@ services:
             # analytics
             - GF_ANALYTICS_CHECK_FOR_UPDATES=true
             - GF_ANALYTICS_REPORTING_ENABLED=false
+            # users
+            - GF_USERS_ALLOW_ORG_CREATE=false
+            - GF_USERS_ALLOW_SIGN_UP=false
         volumes:
             - grafana:/var/lib/grafana
 
