@@ -20,6 +20,7 @@ services:
             - 127.0.0.1:3000:3000
         environment:
             - GF_SERVER_ROOT_URL=http://grfn.localhost
+            - GF_SECURITY_ADMIN_USER=admin
             - GF_SECURITY_ADMIN_PASSWORD=changeme
             - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
             ## smtp-related settings
