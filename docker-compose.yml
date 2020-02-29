@@ -33,6 +33,7 @@ services:
             # mail credentials for the mail server
             - GF_SMTP_USER=bob
             - GF_SMTP_PASSWORD=changeme
+            - GF_SMTP_SKIP_VERITY=false
             # analytics
             - GF_ANALYTICS_CHECK_FOR_UPDATES=true
             - GF_ANALYTICS_REPORTING_ENABLED=false
