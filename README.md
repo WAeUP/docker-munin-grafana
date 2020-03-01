@@ -88,3 +88,20 @@ name than the given ones from the imported template.
 
 Therefore, we have to go through all the elements and have to fix these
 sources.
+
+
+#### Fix the dashboard
+
+It is normally easier to fix the downloaded dashboard by using find-and-replace
+in a capable editor of your choice. That means, you can download the stock
+munin dashboard as JSON data from
+https://grafana.com/api/dashboards/9627/revisions/1/download and then edit the
+file to fix all occurrences of `KnallimallOrg` in `target` settings. Replace
+this string with one produced by your munin nodes.
+
+The targets in the JSON file denote the names of RRD files we want to graph.
+For instance the default munin dashboard looks for a RRD file called
+"KnallimallOrg-uptime-uptime-g:42" to graph the uptime of the "KnallimallOrg"
+host. Your RRD files will probably look similar but start with a different
+name. Modify all targets in the JSON file to match your really existing RRD
+graphs.
